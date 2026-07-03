@@ -19,6 +19,14 @@ import Profile from './pages/Profile';
 import AdminLayout from './components/AdminLayout';
 import Dashboard from './pages/admin/Dashboard';
 import ManageProducts from './pages/admin/ManageProducts';
+import ManageCategories from './pages/admin/ManageCategories';
+import ManageBrands from './pages/admin/ManageBrands';
+import ManageOrders from './pages/admin/ManageOrders';
+import ManageUsers from './pages/admin/ManageUsers';
+import ManagePayments from './pages/admin/ManagePayments';
+import ManageReviews from './pages/admin/ManageReviews';
+import ManageCoupons from './pages/admin/ManageCoupons';
+import AdminSettings from './pages/admin/AdminSettings';
 
 const router = createBrowserRouter([
   {
@@ -44,8 +52,15 @@ const router = createBrowserRouter([
     element: <AdminLayout />,
     children: [
       { index: true, element: <Dashboard /> },
-      { path: "products", element: <ManageProducts /> }
-      // other admin CRUD routes would go here seamlessly following same pattern
+      { path: "products", element: <ManageProducts /> },
+      { path: "categories", element: <ManageCategories /> },
+      { path: "brands", element: <ManageBrands /> },
+      { path: "orders", element: <ManageOrders /> },
+      { path: "users", element: <ManageUsers /> },
+      { path: "payments", element: <ManagePayments /> },
+      { path: "reviews", element: <ManageReviews /> },
+      { path: "coupons", element: <ManageCoupons /> },
+      { path: "settings", element: <AdminSettings /> }
     ]
   }
 ]);
