@@ -15,10 +15,9 @@ export default function Login() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      // Mock successful login since backend might not be up yet
-      // await login({ email, password });
-      toast.success('Logged in successfully (Mock)');
-      navigate('/');
+      await login({ email, password });
+      toast.success(email === 'admin@eshop.com' ? 'Welcome Admin!' : 'Logged in successfully');
+      navigate(email === 'admin@eshop.com' ? '/admin' : '/');
     } catch (err) {
       toast.error(err.response?.data?.message || 'Login failed');
     } finally {

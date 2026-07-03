@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { FileText, Printer, ArrowLeft } from 'lucide-react';
 import { mockProducts } from '../mockData';
+import toast from 'react-hot-toast';
 
 export default function Invoice() {
   const { id } = useParams();

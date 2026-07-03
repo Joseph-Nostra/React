@@ -11,12 +11,13 @@ export function CartProvider({ children }) {
   useEffect(() => { localStorage.setItem('cart', JSON.stringify(items)); }, [items]);
 
   const addItem = (product, qty = 1) => {
-    setItems(prev => {
-      const existing = prev.find(i => i._id === product._id);
-      if (existing) return prev.map(i => i._id === product._id ? { ...i, qty: i.qty + qty } : i);
+    const existing = items.find(i => i._id === product._id);
+    if (!existing) {
       toast.success('Added to cart!');
-      return [...prev, { ...product, qty }];
-    });
+      setItems([...items, { ...product, qty }]);
+    } else {
+      setItems(items.map(i => i._id === product._id ? { ...i, qty: i.qty + qty } : i));
+    }
   };
 
   const removeItem = (id) => setItems(prev => prev.filter(i => i._id !== id));
