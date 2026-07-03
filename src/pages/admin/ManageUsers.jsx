@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Edit, Trash2, Search, ShieldCommand } from 'lucide-react';
+import { Edit, Trash2, Search, Shield } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 export default function ManageUsers() {
@@ -36,7 +36,7 @@ export default function ManageUsers() {
                   </td>
                   <td>
                     {u.role === 'admin' ? 
-                      <span className="badge badge-info"><ShieldCommand size={12} style={{ display: 'inline', marginRight: 4 }}/> Admin</span> : 
+                      <span className="badge badge-info"><Shield size={12} style={{ display: 'inline', marginRight: 4 }}/> Admin</span> : 
                       <span className="badge" style={{ background: 'var(--bg3)' }}>Client</span>
                     }
                   </td>
