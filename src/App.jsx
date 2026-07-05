@@ -16,6 +16,7 @@ import Checkout from './pages/Checkout';
 import Invoice from './pages/Invoice';
 import Wishlist from './pages/Wishlist';
 import Profile from './pages/Profile';
+import Contact from './pages/Contact';
 import AdminLayout from './components/AdminLayout';
 import Dashboard from './pages/admin/Dashboard';
 import ManageProducts from './pages/admin/ManageProducts';
@@ -44,7 +45,8 @@ const router = createBrowserRouter([
       { path: "checkout", element: <Checkout /> },
       { path: "invoice/:id", element: <Invoice /> },
       { path: "wishlist", element: <Wishlist /> },
-      { path: "profile", element: <Profile /> }
+      { path: "profile", element: <Profile /> },
+      { path: "contact", element: <Contact /> }
     ]
   },
   {
